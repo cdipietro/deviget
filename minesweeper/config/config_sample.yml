@@ -23,3 +23,11 @@ app:
         # filename: 'minesweeper.log'
         # max_size: 20971520 # 20 MB
         # backup_count: 5
+
+database:
+  host: 'localhost'
+  port: 27017
+  name: 'minesweeper'
+  username: 'admin'
+  #You can use `minesweeper.common.auth.generate_secret_key` to create strong password
+  password: '<some strong pasword>'
