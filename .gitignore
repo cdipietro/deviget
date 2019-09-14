@@ -60,4 +60,9 @@ Pipfile.lock
 .ipynb*
 
 # PyCharm project dir
-.idea 
+.idea
+
+
+# Application config files
+###########################
+minesweeper/config/config.yml
