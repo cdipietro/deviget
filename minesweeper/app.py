@@ -2,6 +2,8 @@ import falcon
 
 from minesweeper.config import config
 from minesweeper.common.logging import setup_logger
+
+from minesweeper.databases.mongo import connect_to_mongo_db
 from minesweeper.middlewares import internal_error_handler
 from minesweeper.resources.test import TestResource
 
@@ -11,6 +13,9 @@ config.load()
 
 # Create application logger
 logger = setup_logger()
+
+# Connect to the application database
+connect_to_mongo_db()
 
 # Create application middlewares
 middleware = []

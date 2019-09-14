@@ -19,6 +19,8 @@ gunicorn = "*"
 bcrypt = "*"
 cryptography = "*"
 pyjwt = "*"
+mongoengine = "*"
+blinker = "*"
 
 [requires]
 python_version = "3.7"
