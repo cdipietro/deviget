@@ -8,8 +8,14 @@ ipython = "*"
 ipdb = "*"
 autopep8 = "*"
 pycodestyle = "*"
+requests = "*"
+httpie = "*"
 
 [packages]
+pyyaml = "*"
+falcon = "*"
+marshmallow = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
