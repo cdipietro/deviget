@@ -1,6 +1,16 @@
 ---
 
 app:
+  auth:
+    # Secret key used to encrypt/decrypt user passwords
+    # You can use `minesweeper.common.auth.generate_secret_key` to create strong secret key
+    pwd_key_secret: '<some secret password key>'
+    # Secret key used to encrypt/decrypt JWT tokens used as client api-keys
+    # You can use `minesweeper.common.auth.generate_secret_key` to create strong secret key
+    api_key_secret: '<some secret api key>'
+    # Client api-key expiration time
+    api_token_exp: '24:00:00'
+
   logging:
     level: 'DEBUG'
     msg_format: '%(asctime)s.%(msecs)03d [%(levelname)-8s]: %(message)s'
