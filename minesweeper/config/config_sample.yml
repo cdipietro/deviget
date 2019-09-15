@@ -23,7 +23,6 @@ app:
         # filename: 'minesweeper.log'
         # max_size: 20971520 # 20 MB
         # backup_count: 5
-
   game:
     max_rows: 99
     max_columns: 99
@@ -31,6 +30,7 @@ app:
 
 
 database:
+  # Use 'local.mongo' if you plan to run with docker-compose
   host: 'localhost'
   port: 27017
   name: 'minesweeper'

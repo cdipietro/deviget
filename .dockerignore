@@ -1,0 +1,13 @@
+# OS generated files #
+######################
+
+# Python
+*.pyc
+*pycache*
+env/*
+
+
+# Application config files
+###########################
+
+minesweeper/config/*.yml
