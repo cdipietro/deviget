@@ -1,0 +1,42 @@
+---
+version: '3.1'
+
+
+volumes:
+  database_vol:
+    driver: local
+
+
+services:
+  minesweeper_api:
+    build: ./
+    image: minesweeper/api:latest
+    ports:
+      - '8000:8000'
+    depends_on:
+      - mongo
+    environment:
+      TZ: America/Argentina/Buenos_Aires
+    volumes:
+      # Mount local configuration file into container
+      - ./minesweeper/config/config.yml:/etc/minesweeper/config.yml
+    restart: unless-stopped
+
+  mongo:
+    image: 'mongo:latest'
+    ports:
+      - '27017:27017'
+    environment:
+      TZ: America/Argentina/Buenos_Aires
+      # These variables values must match the ones in the configuration being mounted in
+      # the minesweeper_api service
+      MONGO_INITDB_DATABASE: 'minesweeper'
+      MONGO_INITDB_ROOT_USERNAME: 'admin'
+      MONGO_INITDB_ROOT_PASSWORD: 'VlJ0WklOU3RLN1AwX3hSRXdHQUZ4bnNQdlczZWRNeTFrV2ZVYzJGUDA2bz0='
+    networks:
+      default:
+        aliases:
+         - local.mongo
+    volumes:
+      - database_vol:/data/db
+    restart: unless-stopped
