@@ -24,6 +24,12 @@ app:
         # max_size: 20971520 # 20 MB
         # backup_count: 5
 
+  game:
+    max_rows: 99
+    max_columns: 99
+    max_mines: null
+
+
 database:
   host: 'localhost'
   port: 27017

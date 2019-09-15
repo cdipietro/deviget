@@ -1,5 +1,7 @@
 import re
 
+from minesweeper.config import config
+
 
 def validate_email(value):
     """Validates email address value.
@@ -23,6 +25,40 @@ def validate_name(value):
     return value is None or validate_str_length(value, 1, 255)
 
 
+def validate_nbr_rows(value):
+    """Validates a value for number of rows value
+
+    :param value: A candidate value for number of rows
+    :type value: int
+    :return: True if values is a valid number of rows. Otherwise returns False
+    :rtype: bool
+    """
+    return 2 <= value <= config['app']['game'].get('max_rows', 99)
+
+
+def validate_nbr_columns(value):
+    """Validates a value for number of columns value
+
+    :param value: A candidate value for number of columns
+    :type value: int
+    :return: True if values is a valid number of columns. Otherwise returns False
+    :rtype: bool
+    """
+    return 2 <= value <= config['app']['game'].get('max_columns', 99)
+
+
+def validate_nbr_mines(value):
+    """Validates a value for number of mines value
+
+    :param value: A candidate value for number of mines
+    :type value: int
+    :return: True if values is a valid number of mines. Otherwise returns False
+    :rtype: bool
+    """
+    max_nbr_cells = config['app']['game'].get('max_rows', 99) * config['app']['game'].get('max_columns', 99)
+    return 1 <= value <= (config['app']['game'].get('max_mines') or max_nbr_cells - 1)
+
+
 def validate_password(value):
     """Validates password value.
 
@@ -39,6 +75,17 @@ def validate_password(value):
     has_alpha = sum(c.isalpha() for c in value)
 
     return has_valid_length and has_alpha and has_digits
+
+
+def validate_status(value):
+    """Validates a status value
+
+    :param value: A candidate value for status
+    :type value: string
+    :return: True if values is among the status choices. Otherwise returns False
+    :rtype: bool
+    """
+    return value in ('new', 'started', 'paused', 'won', 'lost')
 
 
 def validate_str_length(value, min_length=None, max_length=None):
