@@ -20,7 +20,10 @@ logger = setup_logger()
 connect_to_mongo_db()
 
 # Create application middlewares
-middleware = [RequireJSONMiddleware()]
+middleware = [
+    RequireJSONMiddleware(),
+    LoggerMiddleware()
+]
 
 # Create application
 app = application = falcon.API(middleware=middleware)
