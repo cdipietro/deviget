@@ -1,4 +1,4 @@
-# TODOs
+# TODO
 
 ## Goals:
 - Design and implement a documented RESTful API for the game (think of a mobile app for your API)
@@ -26,10 +26,17 @@
 
 
 ## Action Plan:
-    - [] Draft API resources along with its endpoints and respective database models
-    - [] Implement API database models
-    - [] Implement API endpoints
-    - [] Create Postman collection for testing API endpoints
-    - [] Write README file
-    - [] Create unit-tests for
-    - [] Document code
+    - [✓] Draft API resources along with its endpoints and respective database models
+    - [✓] Implement API database models
+    - [✓] Implement API endpoints
+    - [✓] Document code
+    - [✓] Create Postman collection for testing API endpoints
+    - [✓] Create Dockerfile and docker-compose for containerizing the API
+    - [ ] Add logging middleweare for easier tracking of requests
+    - [ ] Add log-in resource + endpoint authentication/authorization
+    - [ ] Sanitize input parameters from requests
+    - [ ] Paginate API responses
+    - [ ] Create unit-tests
+    - [ ] Deploy API on the cloud
+    - [ ] Create API documentation
+    - [ ] Write README file
