@@ -5,6 +5,7 @@ from minesweeper.common.logging import setup_logger
 from minesweeper.databases.mongo import connect_to_mongo_db
 from minesweeper.middlewares import *
 from minesweeper.resources.game import GameResource
+from minesweeper.resources.game_action import GameActionResource
 from minesweeper.resources.user import UserResource
 from minesweeper.resources.test import TestResource
 
@@ -40,5 +41,8 @@ app.add_route('/user/{user}', user_resource)
 game_resource = GameResource()
 app.add_route('/game', game_resource, suffix='collection')
 app.add_route('/game/{game}', game_resource)
+
+game_action_resource = GameActionResource()
+app.add_route('/game/{game}/{action}', game_action_resource)
 
 logger.info('Minesweeper API started')
