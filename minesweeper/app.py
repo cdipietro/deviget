@@ -2,9 +2,9 @@ import falcon
 
 from minesweeper.config import config
 from minesweeper.common.logging import setup_logger
-
 from minesweeper.databases.mongo import connect_to_mongo_db
 from minesweeper.middlewares import *
+from minesweeper.resources.user import UserResource
 from minesweeper.resources.test import TestResource
 
 
@@ -26,10 +26,13 @@ app = application = falcon.API(middleware=middleware)
 # Add app special handlers
 app.add_error_handler(Exception, internal_error_handler)
 
-# Instantiate application resources
+# Setup Test resource endpoints
 test_resource = TestResource()
-
-# Declare application routes
 app.add_route('/test', test_resource)
+
+# Setup User resource endpoints
+user_resource = UserResource()
+app.add_route('/user', user_resource, suffix='collection')
+app.add_route('/user/{user}', user_resource)
 
 logger.info('Minesweeper API started')
