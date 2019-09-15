@@ -3,6 +3,7 @@ from falcon import (
     HTTPInternalServerError
 )
 
+from .logging import LoggerMiddleware
 from .require_json import RequireJSONMiddleware
 
 

@@ -32,7 +32,7 @@
     - [✓] Document code
     - [✓] Create Postman collection for testing API endpoints
     - [✓] Create Dockerfile and docker-compose for containerizing the API
-    - [ ] Add logging middleweare for easier tracking of requests
+    - [✓] Add logging middleweare for easier tracking of requests
     - [ ] Add log-in resource + endpoint authentication/authorization
     - [ ] Sanitize input parameters from requests
     - [ ] Paginate API responses
