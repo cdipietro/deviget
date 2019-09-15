@@ -3,6 +3,8 @@ from falcon import (
     HTTPInternalServerError
 )
 
+from .require_json import RequireJSONMiddleware
+
 
 def internal_error_handler(ex, req, resp, params):
     """Whenever an non-falcon exception is raised, it wraps it into a falcon.HTTPInternalServererror exception.
