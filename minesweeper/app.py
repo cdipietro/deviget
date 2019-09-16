@@ -21,8 +21,8 @@ connect_to_mongo_db()
 
 # Create application middlewares
 middleware = [
+    LoggerMiddleware(),
     RequireJSONMiddleware(),
-    LoggerMiddleware()
 ]
 
 # Create application

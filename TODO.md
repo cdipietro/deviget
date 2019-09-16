@@ -37,6 +37,6 @@
     - [ ] Sanitize input parameters from requests
     - [ ] Paginate API responses
     - [ ] Create unit-tests
-    - [ ] Deploy API on the cloud
+    - [✓] Deploy API on the cloud
     - [ ] Create API documentation
     - [ ] Write README file
