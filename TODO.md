@@ -39,4 +39,4 @@
     - [ ] Create unit-tests
     - [✓] Deploy API on the cloud
     - [ ] Create API documentation
-    - [ ] Write README file
+    - [✓] Write README file
